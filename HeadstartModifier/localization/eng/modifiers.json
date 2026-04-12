@@ -1,3 +1,5 @@
 {
-
+  "AJAMA_HEADSTART.description": "Start with [blue]2[/blue] Strikes, [blue]2[/blue] Defends, and starters. Choose [blue]9[/blue] out of [blue]35[/blue] cards to add to your starting deck.",
+  "AJAMA_HEADSTART.selectionPrompt": "Choose [blue]9[/blue] cards to add to your starting deck.",
+  "AJAMA_HEADSTART.title": "Head Start"
 }
