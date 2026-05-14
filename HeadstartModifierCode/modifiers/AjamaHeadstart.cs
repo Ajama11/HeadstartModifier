@@ -137,8 +137,7 @@ public class AjamaHeadstart : ModifierModel
 
     private static IEnumerable<CardModel> GetUniqueStartersForCharacter(CharacterModel character)
     {
-        return character.CardPool.AllCards.Where(c =>
-            c.Rarity == CardRarity.Basic && 
+        return character.StartingDeck.Where(c =>
             !(
                 c.Tags.Contains(CardTag.Strike) || 
                 c.Tags.Contains(CardTag.Defend)

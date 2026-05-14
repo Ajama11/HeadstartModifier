@@ -1,3 +1,4 @@
+using BaseLib.Config;
 using Godot;
 using HarmonyLib;
 using MegaCrit.Sts2.Core.Modding;
@@ -16,6 +17,8 @@ public partial class MainFile : Node
 
     public static void Initialize()
     {
+        ModConfigRegistry.Register(ModId, new Config());
+        
         Harmony harmony = new(ModId);
 
         harmony.PatchAll();

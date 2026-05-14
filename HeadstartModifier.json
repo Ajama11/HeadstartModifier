@@ -3,9 +3,13 @@
   "name": "Head Start Modifier",
   "author": "Ajama",
   "description": "Adds a Custom Run Modifier for getting a head start on card rewards and removals. Start with 2 Strikes, 2 Defends, and your character's unique starters. Choose 9 out of 35 cards to add to your starting deck, like Sealed Deck. 5 of those 35 cards are Colorless.",
-  "version": "v1.0.0",
+  "version": "v1.1.0",
   "has_pck": true,
   "has_dll": true,
-  "dependencies": ["BaseLib"],
+  "min_game_version": "0.105.1",
+  "dependencies":
+  [
+    {"id": "BaseLib", "min_version": "3.1.3"}
+  ],
   "affects_gameplay": true
 }
