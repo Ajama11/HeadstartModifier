@@ -2,6 +2,7 @@ using Godot;
 using HarmonyLib;
 using MegaCrit.Sts2.addons.mega_text;
 using MegaCrit.Sts2.Core.Assets;
+using MegaCrit.Sts2.Core.ControllerInput;
 using MegaCrit.Sts2.Core.Helpers;
 using MegaCrit.Sts2.Core.Localization;
 using MegaCrit.Sts2.Core.Nodes.Cards;
@@ -78,10 +79,10 @@ public class AddViewUpgradesPatch
             if (NControllerManager.Instance == null) return;
             if (!tickbox.IsValid()) return;
             
-            tickbox.Visible = !NControllerManager.Instance.IsUsingController;
+            tickbox.Visible = NControllerManager.Instance.InputType != InputType.Controller;
 
             // ReSharper disable once InvertIf
-            if (NControllerManager.Instance.IsUsingController)
+            if (NControllerManager.Instance.InputType == InputType.Controller)
             {
                 tickbox.IsTicked = false;
                 Apply(tickbox);
@@ -106,8 +107,8 @@ public class AddViewUpgradesPatch
             }
             else
             {
-                tickbox.Visible = !NControllerManager.Instance.IsUsingController;
-                if (!NControllerManager.Instance.IsUsingController)
+                tickbox.Visible = NControllerManager.Instance.InputType != InputType.Controller;
+                if (NControllerManager.Instance.InputType != InputType.Controller)
                 {
                     viewUpgrades.MouseFilter = Control.MouseFilterEnum.Pass;
                     if (colorRect != null) colorRect.MouseFilter = Control.MouseFilterEnum.Stop;
